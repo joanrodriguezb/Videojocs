@@ -14,4 +14,8 @@ public class TextFilter {
     public TextFilter(String[] paraulesProhibides) {
         this.paraulesProhibides = paraulesProhibides;
     }
+
+    public String filter(String text){
+        return "";
+    }
 }
