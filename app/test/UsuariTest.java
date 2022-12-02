@@ -27,7 +27,7 @@ class UsuariTest {
     @Test
     void afegirComentari() {
         Usuari usuariTest = new Usuari(NOM_USER_TEST);
-        Videojoc videojocTest = new Videojoc(NOM_JOC_TEST);
+        Videojoc videojocTest = new Videojoc();
         usuariTest.afegirComentari(videojocTest, TEXT_COMENTARI_TEST);
 
         Set<Comentari> comentaris = videojocTest.getComentaris();

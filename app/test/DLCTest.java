@@ -9,7 +9,7 @@ class DLCTest {
 
     @org.junit.jupiter.api.Test
     void setIGetNomDLC() {
-        DLC testDLC = new DLC(nom, videjoc);
+        DLC testDLC = new DLC(nom, videojoc);
         testDLC.setNom(nom);
         assertEquals(nom, testDLC.getNom());
     }
@@ -23,7 +23,7 @@ class DLCTest {
 
     @org.junit.jupiter.api.Test
     void getDlcVideojoc() {
-        assertEquals(videojoc, testVideojoc.getNom());
+        assertEquals(videojoc, videojoc.getNom());
     }
 
 }

@@ -19,14 +19,14 @@ class VideojocTest {
 
     @Test
     void setiGetEdatRecomanadaPEGI() {
-        Videojoc videojocDeProva = new Videojoc(NOM_VIDEOJOC);
+        Videojoc videojocDeProva = new Videojoc();
         videojocDeProva.setEdatRecomanadaPEGI(EDAT_PEGI);
         assert(videojocDeProva.getEdatRecomanadaPEGI().equals(EDAT_PEGI));
     }
 
     @Test
     void setIGetNom() {
-        Videojoc videojocDeProva = new Videojoc("lol, però no el que estàs pensant. kñ bfd asfasddfasasfdasfd");
+        Videojoc videojocDeProva = new Videojoc();
         videojocDeProva.setNom(NOM_VIDEOJOC);
         assertEquals(videojocDeProva.getNom(), NOM_VIDEOJOC);
     }
@@ -34,7 +34,7 @@ class VideojocTest {
 
     @Test
     void getISetGenere() {
-        Videojoc videojocTest = new Videojoc(NOM_VIDEOJOC);
+        Videojoc videojocTest = new Videojoc();
 
         videojocTest.setGenere(GENERE);
         String genereDelVideojoc = videojocTest.getGenere();
@@ -43,28 +43,28 @@ class VideojocTest {
 
     @Test
     void setIGetNumeroJugadors() {
-        Videojoc testVideojoc = new Videojoc(NOM_VIDEOJOC);
+        Videojoc testVideojoc = new Videojoc();
         testVideojoc.setNumeroJugadors(NUM_JUGADORS);
         assert (testVideojoc.getNumeroJugadors() == NUM_JUGADORS);
     }
 
     @Test
     void setIgetPreu() {
-        Videojoc testPreu = new Videojoc(NOM_VIDEOJOC);
+        Videojoc testPreu = new Videojoc();
         testPreu.setPreu(PREU);
         assert (testPreu.getPreu() == PREU);
     }
 
     @Test
     void setIGetPlataformes() {
-        Videojoc setGame = new Videojoc(NOM_VIDEOJOC);
+        Videojoc setGame = new Videojoc();
         setGame.setPlataformes("plataformes");
         assertEquals("plataformes", setGame.getPlataformes());
     }
 
     @Test
     void getiSetAmbientacio() {
-        Videojoc videojocTest = new Videojoc(NOM_VIDEOJOC);
+        Videojoc videojocTest = new Videojoc();
         videojocTest.setAmbientacio(AMBIENTACIO);
         String ambientacioDelVideojoc = videojocTest.getAmbientacio();
         assertEquals(ambientacioDelVideojoc, AMBIENTACIO);
@@ -75,7 +75,7 @@ class VideojocTest {
         String edatRetornada;
         Videojoc videojocTest;
 
-        videojocTest = new Videojoc(NOM_VIDEOJOC);
+        videojocTest = new Videojoc();
         videojocTest.setEdatRecomanadaPEGI(ANYS);
         edatRetornada = videojocTest.getEdatRecomanadaPEGI();
         assertEquals(ANYS, edatRetornada);
@@ -83,14 +83,14 @@ class VideojocTest {
 
     @Test
     void setIGetContingutEspecificPEGI() {
-        Videojoc testVideojoc = new Videojoc(NOM_VIDEOJOC);
+        Videojoc testVideojoc = new Videojoc();
         testVideojoc.setContingutEspecificPEGI(CONTINGUT_ESPECIFIC_PEGI);
         assertEquals(CONTINGUT_ESPECIFIC_PEGI, testVideojoc.getContingutEspecificPEGI());
     }
 
     @Test
     void setIgetRequisits() {
-        Videojoc testRequisits = new Videojoc(NOM_VIDEOJOC);
+        Videojoc testRequisits = new Videojoc();
         testRequisits.setRequisits(REQUISITS);
         assertEquals(testRequisits.getRequisits(), REQUISITS);
     }
@@ -98,7 +98,7 @@ class VideojocTest {
 
     @Test
     void afegirUsuariQueConsulta() {
-        Videojoc testVideojoc = new Videojoc(NOM_VIDEOJOC);
+        Videojoc testVideojoc = new Videojoc();
         Usuari usuari = new Usuari("Alejandro");
         testVideojoc.afegirUsuariQueConsulta(usuari);
         Set<Usuari> usuarisQueHanConsultat = testVideojoc.getUsuarisQueHanConsultat();
@@ -110,7 +110,7 @@ class VideojocTest {
         Usuari usuari = new Usuari("nomDeProva");
         String text = "Text de prova";
         Comentari comentariTest = new Comentari(usuari, text);
-        Videojoc testVideojoc = new Videojoc(NOM_VIDEOJOC);
+        Videojoc testVideojoc = new Videojoc();
         testVideojoc.afegirComentari(comentariTest);
         Set<Comentari> comentaris = testVideojoc.getComentaris();
         assert(comentaris.contains(comentariTest));
@@ -118,7 +118,7 @@ class VideojocTest {
 
     @Test
     void Videojoc() {
-        Videojoc videojocDeProva = new Videojoc(NOM_VIDEOJOC);
+        Videojoc videojocDeProva = new Videojoc();
         assert(videojocDeProva.getNom().equals(NOM_VIDEOJOC));
     }
 }
