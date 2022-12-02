@@ -6,7 +6,7 @@ class NotaTest {
 
     @org.junit.jupiter.api.Test
     void setIgetNota() {
-        Nota notaTest = new Nota();
+        Nota notaTest = new Nota(NOTA);
         notaTest.setNota(NOTA);
         assert (notaTest.getNota() == NOTA);
     }
