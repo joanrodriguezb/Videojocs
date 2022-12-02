@@ -98,21 +98,6 @@ public class Videojoc {
         this.requisits = requisits;
     }
 
-    public void mostrarDades() {
-        System.out.println(this.getNom());
-        System.out.println("-------------------------------");
-        System.out.println("* GÈNERE: " + this.getGenere());
-        System.out.println("* NUMERO DE JUGADORS: " + this.getNumeroJugadors());
-        System.out.println("* PREU: " + this.getPreu());
-        System.out.println("* PLATAFORMES: " + this.getPlataformes());
-        System.out.println("* AMBIENTACIÓ: " + this.getAmbientacio());
-        System.out.println("* EDAT RECOMANADA (PEGI): " + this.getEdatRecomanadaPEGI());
-        System.out.println("* CONTINGUT ESPECÍFIC (PEGI) : " + this.getContingutEspecificPEGI());
-        System.out.println("* REQUISITS:\n" + this.getRequisits());
-        System.out.println();
-        System.out.println();
-    }
-
     public void afegirUsuariQueConsulta(Usuari usuari) {
         usuarisQueHanConsultat.add(usuari);
     }
