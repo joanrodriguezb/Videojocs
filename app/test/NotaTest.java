@@ -1,5 +1,3 @@
-import static org.junit.jupiter.api.Assertions.*;
-
 class NotaTest {
 
     public static final int NOTA = 8;
