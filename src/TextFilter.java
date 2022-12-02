@@ -1,5 +1,4 @@
 public class TextFilter {
-
     String[] paraulesProhibides;
 
 
