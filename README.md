@@ -15,5 +15,8 @@ Tecnologies
 
 - Java
 
+Diagrames
+---------
+
 ![image 1](./diagrams/DiagramaClasse.png) 
 ![image 1](./diagrams/DiagramaJavi-Edgar.png) 
