@@ -34,16 +34,4 @@ class ComentariTest {
                         comentariTest.getData().equals(despres)
         );
     }
-
-    @Test
-    void getText() {
-    }
-
-    @Test
-    void testGetUsuari() {
-    }
-
-    @Test
-    void testGetData() {
-    }
 }

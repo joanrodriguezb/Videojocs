@@ -8,8 +8,6 @@ public class Nota {
         this.nota = nota;
     }
 
-
-
     public double getNota() {
         return nota;
     }
