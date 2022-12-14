@@ -1,3 +1,5 @@
+package src;
+
 public class Main {
     private static BibliotecaDeVideojocs biblioteca;
     private static Presentacio presentacio;

@@ -1,4 +1,8 @@
+package Test;
 import org.junit.jupiter.api.Test;
+import src.Comentari;
+import src.Usuari;
+import src.Videojoc;
 
 import java.util.Set;
 

@@ -1,6 +1,10 @@
-import org.junit.jupiter.api.Test;
+package Test;
 
-import java.util.Optional;
+import org.junit.jupiter.api.Test;
+import src.Comentari;
+import src.Usuari;
+import src.Videojoc;
+
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
