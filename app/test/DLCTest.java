@@ -5,7 +5,7 @@ class DLCTest {
     public static final String nom = "The Champions Ballad";
     public static final double prue = 19.95;
 
-    private Videojoc videojoc = new Videojoc();
+    private final Videojoc videojoc = new Videojoc();
 
     @org.junit.jupiter.api.Test
     void setIGetNomDLC() {
@@ -23,7 +23,8 @@ class DLCTest {
 
     @org.junit.jupiter.api.Test
     void getDlcVideojoc() {
-        assertEquals(videojoc, videojoc.getNom());
+        DLC testDLC = new DLC(nom, videojoc);
+        assertEquals(videojoc, testDLC.getVideojoc());
     }
 
 }
