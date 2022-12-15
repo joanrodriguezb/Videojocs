@@ -132,4 +132,14 @@ class VideojocTest {
         Valoracio valoracioRetornada = videojocDeProva.getValoracions().iterator().next();
         assertEquals(valoracioDeProva, valoracioRetornada);
     }
+    
+    @Test
+    void getMitjana() {
+        Usuari usuari1 = new Usuari("usuari de prova 1");
+        Usuari usuari2 = new Usuari("usuari de prova 2");
+        Videojoc videojocTest = new Videojoc(NOM_VIDEOJOC);
+        usuari1.puntuar(videojocTest, 0);
+        usuari2.puntuar(videojocTest, 10);
+        assertEquals(5, videojocTest.getMitjana());
+    }
 }

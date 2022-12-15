@@ -15,16 +15,19 @@ public class Videojoc {
     private Set<Usuari> usuarisQueHanConsultat;
     private Set<Comentari> comentaris;
     private Set<Valoracio> valoracions;
+    public Set<Nota> notes;
 
     public Set<Usuari> getUsuarisQueHanConsultat() {
         return usuarisQueHanConsultat;
     }
+
 
     public Videojoc(String nom) {
         this.nom = nom;
         usuarisQueHanConsultat = new HashSet<>();
         comentaris = new HashSet<>();
         valoracions = new HashSet<>();
+        notes = new HashSet<>();
     }
 
     public String getNom() {
@@ -99,21 +102,6 @@ public class Videojoc {
         this.requisits = requisits;
     }
 
-    public void mostrarDades() {
-        System.out.println(this.getNom());
-        System.out.println("-------------------------------");
-        System.out.println("* GÈNERE: " + this.getGenere());
-        System.out.println("* NUMERO DE JUGADORS: " + this.getNumeroJugadors());
-        System.out.println("* PREU: " + this.getPreu());
-        System.out.println("* PLATAFORMES: " + this.getPlataformes());
-        System.out.println("* AMBIENTACIÓ: " + this.getAmbientacio());
-        System.out.println("* EDAT RECOMANADA (PEGI): " + this.getEdatRecomanadaPEGI());
-        System.out.println("* CONTINGUT ESPECÍFIC (PEGI) : " + this.getContingutEspecificPEGI());
-        System.out.println("* REQUISITS:\n" + this.getRequisits());
-        System.out.println();
-        System.out.println();
-    }
-
     public void afegirUsuariQueConsulta(Usuari usuari) {
         usuarisQueHanConsultat.add(usuari);
     }
@@ -131,6 +119,18 @@ public class Videojoc {
     }
 
     public Set<Valoracio> getValoracions() {
-        return valoracions;
+        return valoracions;    
+    }
+    
+    public void afegirNota(Nota nota) {
+        notes.add(nota);
+    }
+
+    public double getMitjana() {
+        double sumaNotes = 0;
+        for (Nota nota : notes) {
+            sumaNotes += nota.getPuntuacio();
+        }
+        return sumaNotes / notes.size();
     }
 }

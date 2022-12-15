@@ -11,6 +11,7 @@ class UsuariTest {
     public static final String NOM_JOC_TEST = "LOL";
     public static final String TEXT_COMENTARI_TEST = "Aquest joc està xulo";
     public static final String NOM_TIPUS_VALORACIO = "Valoracio de prova";
+    public static final double PUNTUACIO_TEST = 5;
 
     @Test
     void getNickname() {
@@ -50,5 +51,16 @@ class UsuariTest {
         assertEquals(tipusValoracioDeProva, valoracioRetornada.getTipus());
         assertEquals(videojocTest, valoracioRetornada.getVideojoc());
         assertEquals(usuariTest, valoracioRetornada.getUsuari());
+    }
+
+    @Test
+    void puntuar() {
+        Usuari usuariTest = new Usuari(NOM_USER_TEST);
+        Videojoc videojocTest = new Videojoc(NOM_JOC_TEST);
+        usuariTest.puntuar(videojocTest, PUNTUACIO_TEST);
+        Nota notaDeLUsuari = usuariTest.getNotes().iterator().next();
+        assert(notaDeLUsuari.getPuntuacio() == PUNTUACIO_TEST &&
+                notaDeLUsuari.getVideojoc() == videojocTest &&
+                notaDeLUsuari.getUsuari() == usuariTest);
     }
 }

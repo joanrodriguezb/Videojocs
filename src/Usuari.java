@@ -15,11 +15,15 @@ public class Usuari {
     private String cognoms;
     private String correu;
     private LocalDate dataNaixement;
+
+    private Set<Nota> notesDeLUsuari;
+
     public Usuari(String nickname) {
         this.nickname = nickname;
         ultimId++;
         this.id = ultimId;
         valoracions = new HashSet<>();
+        notesDeLUsuari = new HashSet<>();
     }
 
     public String getNickname() {
@@ -42,5 +46,13 @@ public class Usuari {
 
     public Set<Valoracio> getValoracions() {
         return valoracions;
+
+    public void puntuar(Videojoc videojoc, double puntuacioNota) {
+        Nota nota = new Nota(puntuacioNota, this, videojoc);
+        notesDeLUsuari.add(nota);
+    }
+
+    public Set<Nota> getNotes() {
+        return notesDeLUsuari;
     }
 }
