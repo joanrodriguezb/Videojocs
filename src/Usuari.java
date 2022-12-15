@@ -6,6 +6,7 @@ import java.util.Set;
 public class Usuari {
     private final int id;
     private static int ultimId = 0;
+    private Set<Valoracio> valoracions;
 
 
 
@@ -21,6 +22,7 @@ public class Usuari {
         this.nickname = nickname;
         ultimId++;
         this.id = ultimId;
+        valoracions = new HashSet<>();
         notesDeLUsuari = new HashSet<>();
     }
 
@@ -35,6 +37,15 @@ public class Usuari {
     public void afegirComentari(Videojoc videojoc, String textDelComentari) {
         Comentari comentari = new Comentari(this, textDelComentari);
         videojoc.afegirComentari(comentari);
+    }
+
+    public void valora(TipusValoracio tipusValoracio, Videojoc videojocAValorar) {
+        Valoracio novaValoracio = new Valoracio(tipusValoracio, videojocAValorar, this);
+        valoracions.add(novaValoracio);
+    }
+
+    public Set<Valoracio> getValoracions() {
+        return valoracions;
     }
 
     public void puntuar(Videojoc videojoc, double puntuacioNota) {

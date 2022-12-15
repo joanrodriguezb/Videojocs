@@ -123,6 +123,17 @@ class VideojocTest {
     }
 
     @Test
+    public void afegirIGetValoracions() {
+        Videojoc videojocDeProva = new Videojoc(NOM_VIDEOJOC);
+        TipusValoracio tipusValoracioDeProva = new TipusValoracio("Valoracio de prova", true);
+        Usuari usuariDeProva = new Usuari("Usuari de prova");
+        Valoracio valoracioDeProva = new Valoracio(tipusValoracioDeProva, videojocDeProva, usuariDeProva);
+        videojocDeProva.afegirValoracio(valoracioDeProva);
+        Valoracio valoracioRetornada = videojocDeProva.getValoracions().iterator().next();
+        assertEquals(valoracioDeProva, valoracioRetornada);
+    }
+    
+    @Test
     void getMitjana() {
         Usuari usuari1 = new Usuari("usuari de prova 1");
         Usuari usuari2 = new Usuari("usuari de prova 2");

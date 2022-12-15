@@ -14,6 +14,7 @@ public class Videojoc {
 
     private Set<Usuari> usuarisQueHanConsultat;
     private Set<Comentari> comentaris;
+    private Set<Valoracio> valoracions;
     public Set<Nota> notes;
 
     public Set<Usuari> getUsuarisQueHanConsultat() {
@@ -25,6 +26,7 @@ public class Videojoc {
         this.nom = nom;
         usuarisQueHanConsultat = new HashSet<>();
         comentaris = new HashSet<>();
+        valoracions = new HashSet<>();
         notes = new HashSet<>();
     }
 
@@ -112,6 +114,14 @@ public class Videojoc {
         return comentaris;
     }
 
+    public void afegirValoracio(Valoracio valoracio) {
+        valoracions.add(valoracio);
+    }
+
+    public Set<Valoracio> getValoracions() {
+        return valoracions;    
+    }
+    
     public void afegirNota(Nota nota) {
         notes.add(nota);
     }

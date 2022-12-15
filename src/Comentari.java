@@ -1,14 +1,23 @@
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Comentari {
     private Usuari usuari;
     private String text;
     private LocalDate data;
+    private Set<Valoracio> valoracions;
+
+
+    boolean Like;
+    boolean DisLike;
+
 
     public Comentari(Usuari usuari, String text) {
         this.usuari = usuari;
         this.text = text;
         data = LocalDate.from(LocalDate.now());
+        valoracions = new HashSet<>();
     }
 
     public String getText() {
@@ -21,5 +30,13 @@ public class Comentari {
 
     public LocalDate getData() {
         return data;
+    }
+
+    public void afegirValoracio(Valoracio valoracio) {
+        valoracions.add(valoracio);
+    }
+
+    public Set<Valoracio> getValoracions() {
+        return valoracions;
     }
 }

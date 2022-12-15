@@ -1,33 +1,44 @@
 import org.junit.jupiter.api.Test;
 
+import javax.xml.crypto.Data;
+
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ComentariTest {
-    static final Usuari usu = new Usuari("USUARI");
 
     @Test
-    void getComentari() {
-        Comentari comentari = new Comentari(usu, "Buen Juego");
-        assertEquals("Buen Juego", comentari.getText());
+    void getText() {
+        Usuari u = new Usuari("Joan");
+        Comentari testcomentari = new Comentari(u, "Hola");
+        assertEquals(testcomentari.getText(), "Hola");
     }
 
     @Test
     void getUsuari() {
-        Comentari comentari = new Comentari(usu,"Manolito_22");
-        assertEquals(usu, comentari.getUsuari());
+        Usuari usuariTest = new Usuari("Joan");
+        Comentari testcomentari = new Comentari(usuariTest, "Hola");
+        assertEquals(testcomentari.getUsuari(), usuariTest);
     }
 
     @Test
     void getData() {
-        LocalDate abans = LocalDate.now();
-        Comentari comentariTest = new Comentari(usu,"text del comentari");
-        LocalDate despres = LocalDate.now();
-        assert(
-                comentariTest.getData().equals(abans)
-                ||
-                comentariTest.getData().equals(despres)
-        );
+        Usuari u = new Usuari("Joan");
+        Comentari testcomentari = new Comentari(u, "Hola");
+        assertEquals(testcomentari.getData(), LocalDate.from(LocalDate.now()));
+    }
+
+    @Test
+    void afegirIGetValoracions() {
+        Usuari usuariTest = new Usuari("Joan");
+        Comentari testComentari = new Comentari(usuariTest, "Hola");
+        TipusValoracio tipusValoracioTest = new TipusValoracio("valoracio de prova", false);
+        Videojoc testVideojoc = new Videojoc("Videojoc de prova");
+        Valoracio valoracioTest = new Valoracio(tipusValoracioTest, testVideojoc, usuariTest);
+        testComentari.afegirValoracio(valoracioTest);
+
+        Valoracio valoracioRetornada = testComentari.getValoracions().iterator().next();
+        assertEquals(valoracioTest, valoracioRetornada);
     }
 }
