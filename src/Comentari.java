@@ -5,6 +5,10 @@ public class Comentari {
     private String text;
     private LocalDate data;
 
+    boolean Like;
+    boolean DisLike;
+
+
     public Comentari(Usuari usuari, String text) {
         this.usuari = usuari;
         this.text = text;
@@ -21,5 +25,11 @@ public class Comentari {
 
     public LocalDate getData() {
         return data;
+    }
+    public boolean AfegirLike(){
+        return Like;
+    }
+    public boolean AfegirDisLike(){
+        return DisLike;
     }
 }
