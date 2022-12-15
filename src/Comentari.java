@@ -9,6 +9,10 @@ public class Comentari {
     private Set<Valoracio> valoracions;
 
 
+    boolean Like;
+    boolean DisLike;
+
+
     public Comentari(Usuari usuari, String text) {
         this.usuari = usuari;
         this.text = text;
