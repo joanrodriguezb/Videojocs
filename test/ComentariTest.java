@@ -1,7 +1,5 @@
 import org.junit.jupiter.api.Test;
 
-import javax.xml.crypto.Data;
-
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,31 +9,34 @@ class ComentariTest {
     @Test
     void getText() {
         Usuari u = new Usuari("Joan");
-        Comentari testcomentari = new Comentari(u,"Hola");
-        assertEquals (testcomentari.getText(), "Hola");
+        Comentari testcomentari = new Comentari(u, "Hola");
+        assertEquals(testcomentari.getText(), "Hola");
     }
 
     @Test
     void getUsuari() {
-        Usuari u = new Usuari("Joan");
-        Comentari testcomentari = new Comentari(u,"Hola");
-        assertEquals (testcomentari.usuari.getNickname(), "Joan");
+        Usuari usuariTest = new Usuari("Joan");
+        Comentari testcomentari = new Comentari(usuariTest, "Hola");
+        assertEquals(testcomentari.getUsuari(), usuariTest);
     }
 
     @Test
     void getData() {
         Usuari u = new Usuari("Joan");
-        Comentari testcomentari = new Comentari(u,"Hola");
-        assertEquals (testcomentari.getData(), LocalDate.from(LocalDate.now()));
-
+        Comentari testcomentari = new Comentari(u, "Hola");
+        assertEquals(testcomentari.getData(), LocalDate.from(LocalDate.now()));
     }
+
     @Test
-    void getLikes(){
-        Usuari u = new Usuari("Joan");
-        Comentari testcomentari = new Comentari(u,"Hola");
-        Likes Like = new Like(testcomentari, 1);
-        DisLikes DisLike = new DisLike(testcomentari, 1);
-        assertEquals(testcomentari.Like, 1);
-        assertEquals(testcomentari.DisLike, 1);
+    void afegirIGetValoracions() {
+        Usuari usuariTest = new Usuari("Joan");
+        Comentari testComentari = new Comentari(usuariTest, "Hola");
+        TipusValoracio tipusValoracioTest = new TipusValoracio("valoracio de prova", false);
+        Videojoc testVideojoc = new Videojoc("Videojoc de prova");
+        Valoracio valoracioTest = new Valoracio(tipusValoracioTest, testVideojoc, usuariTest);
+        testComentari.afegirValoracio(valoracioTest);
+
+        Valoracio valoracioRetornada = testComentari.getValoracions().iterator().next();
+        assertEquals(valoracioTest, valoracioRetornada);
     }
 }

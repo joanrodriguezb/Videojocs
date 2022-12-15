@@ -121,4 +121,15 @@ class VideojocTest {
         Videojoc videojocDeProva = new Videojoc(NOM_VIDEOJOC);
         assert(videojocDeProva.getNom().equals(NOM_VIDEOJOC));
     }
+
+    @Test
+    public void afegirIGetValoracions() {
+        Videojoc videojocDeProva = new Videojoc(NOM_VIDEOJOC);
+        TipusValoracio tipusValoracioDeProva = new TipusValoracio("Valoracio de prova", true);
+        Usuari usuariDeProva = new Usuari("Usuari de prova");
+        Valoracio valoracioDeProva = new Valoracio(tipusValoracioDeProva, videojocDeProva, usuariDeProva);
+        videojocDeProva.afegirValoracio(valoracioDeProva);
+        Valoracio valoracioRetornada = videojocDeProva.getValoracions().iterator().next();
+        assertEquals(valoracioDeProva, valoracioRetornada);
+    }
 }

@@ -1,17 +1,24 @@
-
 public class Valoracio {
-    String nom;
-    Boolean tipus;
-    int NomPositiu;
-    int NomNegatiu;
-    public static int contarNomPositiu(int NomPositiu){
-        NomPositiu++;
-        return NomPositiu;
+    private TipusValoracio tipus;
+    private Videojoc videojoc;
+    private Usuari usuari;
+
+    public Valoracio(TipusValoracio tipus, Videojoc videojoc, Usuari usuari) {
+        this.tipus = tipus;
+        this.videojoc = videojoc;
+        this.usuari = usuari;
+        videojoc.afegirValoracio(this);
     }
-    public static int contarNomNegatiu(int NomNegatiu){
-        NomNegatiu++;
-        return NomNegatiu;
+
+    public TipusValoracio getTipus() {
+        return tipus;
+    }
+
+    public Videojoc getVideojoc() {
+        return videojoc;
+    }
+
+    public Usuari getUsuari() {
+        return usuari;
     }
 }
-
-

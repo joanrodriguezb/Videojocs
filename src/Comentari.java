@@ -1,18 +1,19 @@
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Comentari {
     private Usuari usuari;
     private String text;
     private LocalDate data;
-
-    boolean Like;
-    boolean DisLike;
+    private Set<Valoracio> valoracions;
 
 
     public Comentari(Usuari usuari, String text) {
         this.usuari = usuari;
         this.text = text;
         data = LocalDate.from(LocalDate.now());
+        valoracions = new HashSet<>();
     }
 
     public String getText() {
@@ -26,10 +27,12 @@ public class Comentari {
     public LocalDate getData() {
         return data;
     }
-    public boolean AfegirLike(){
-        return Like;
+
+    public void afegirValoracio(Valoracio valoracio) {
+        valoracions.add(valoracio);
     }
-    public boolean AfegirDisLike(){
-        return DisLike;
+
+    public Set<Valoracio> getValoracions() {
+        return valoracions;
     }
 }
