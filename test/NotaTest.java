@@ -5,11 +5,11 @@ class NotaTest {
 
     @org.junit.jupiter.api.Test
     void setIgetNota() {
-        Nota notaTest = new Nota(NOTA);
-        assert(notaTest.getNota() == NOTA);
-        notaTest.setNota(NOTA1);
-        assert (notaTest.getNota() == NOTA1);
+        Videojoc videojocTest = new Videojoc("videojoc de prova");
+        Usuari usuariTest = new Usuari("usuari de prova");
+        Nota notaTest = new Nota(NOTA, usuariTest, videojocTest);
+        assert(notaTest.getPuntuacio() == NOTA);
+        notaTest.setPuntuacio(NOTA1);
+        assert (notaTest.getPuntuacio() == NOTA1);
     }
-
-
 }

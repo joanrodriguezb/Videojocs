@@ -13,17 +13,19 @@ public class Videojoc {
     private String requisits;
 
     private Set<Usuari> usuarisQueHanConsultat;
-
     private Set<Comentari> comentaris;
+    public Set<Nota> notes;
 
     public Set<Usuari> getUsuarisQueHanConsultat() {
         return usuarisQueHanConsultat;
     }
 
+
     public Videojoc(String nom) {
         this.nom = nom;
         usuarisQueHanConsultat = new HashSet<>();
         comentaris = new HashSet<>();
+        notes = new HashSet<>();
     }
 
     public String getNom() {
@@ -108,5 +110,17 @@ public class Videojoc {
 
     public Set<Comentari> getComentaris() {
         return comentaris;
+    }
+
+    public void afegirNota(Nota nota) {
+        notes.add(nota);
+    }
+
+    public double getMitjana() {
+        double sumaNotes = 0;
+        for (Nota nota : notes) {
+            sumaNotes += nota.getPuntuacio();
+        }
+        return sumaNotes / notes.size();
     }
 }

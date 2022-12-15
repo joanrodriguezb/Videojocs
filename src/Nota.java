@@ -1,17 +1,29 @@
 public class Nota {
 
-    double nota;
+    private double puntuacio;
+    private Usuari usuari;
+    private Videojoc videojoc;
 
-    public Nota(double nota) {
-        this.nota = nota;
+    public Nota(double puntuacio, Usuari usuari, Videojoc videojoc) {
+        this.puntuacio = puntuacio;
+        this.usuari = usuari;
+        this.videojoc = videojoc;
+        videojoc.afegirNota(this);
     }
 
-    public double getNota() {
-        return nota;
+    public double getPuntuacio() {
+        return puntuacio;
     }
 
-    public void setNota(double nota) {
-        this.nota = nota;
+    public void setPuntuacio(double puntuacio) {
+        this.puntuacio = puntuacio;
     }
 
+    public Usuari getUsuari() {
+        return usuari;
+    }
+
+    public Videojoc getVideojoc() {
+        return videojoc;
+    }
 }
