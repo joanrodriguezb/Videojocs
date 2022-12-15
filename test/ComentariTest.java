@@ -1,33 +1,41 @@
 import org.junit.jupiter.api.Test;
 
+import javax.xml.crypto.Data;
+
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ComentariTest {
-    static final Usuari usu = new Usuari("USUARI");
 
     @Test
-    void getComentari() {
-        Comentari comentari = new Comentari(usu, "Buen Juego");
-        assertEquals("Buen Juego", comentari.getText());
+    void getText() {
+        Usuari u = new Usuari("Joan");
+        Comentari testcomentari = new Comentari(u,"Hola");
+        assertEquals (testcomentari.getText(), "Hola");
     }
 
     @Test
     void getUsuari() {
-        Comentari comentari = new Comentari(usu,"Manolito_22");
-        assertEquals(usu, comentari.getUsuari());
+        Usuari u = new Usuari("Joan");
+        Comentari testcomentari = new Comentari(u,"Hola");
+        assertEquals (testcomentari.usuari.getNickname(), "Joan");
     }
 
     @Test
     void getData() {
-        LocalDate abans = LocalDate.now();
-        Comentari comentariTest = new Comentari(usu,"text del comentari");
-        LocalDate despres = LocalDate.now();
-        assert(
-                comentariTest.getData().equals(abans)
-                ||
-                comentariTest.getData().equals(despres)
-        );
+        Usuari u = new Usuari("Joan");
+        Comentari testcomentari = new Comentari(u,"Hola");
+        assertEquals (testcomentari.getData(), LocalDate.from(LocalDate.now()));
+
+    }
+    @Test
+    void getLikes(){
+        Usuari u = new Usuari("Joan");
+        Comentari testcomentari = new Comentari(u,"Hola");
+        Likes Like = new Like(testcomentari, 1);
+        DisLikes DisLike = new DisLike(testcomentari, 1);
+        assertEquals(testcomentari.Like, 1);
+        assertEquals(testcomentari.DisLike, 1);
     }
 }
