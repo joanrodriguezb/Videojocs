@@ -5,7 +5,7 @@ class DLCTest {
     public static final String nom = "The Champions Ballad";
     public static final double prue = 19.95;
 
-    private final Videojoc videojoc = new Videojoc();
+    private final Videojoc videojoc = new Videojoc("Videojoc de prova");
 
     @org.junit.jupiter.api.Test
     void setIGetNomDLC() {

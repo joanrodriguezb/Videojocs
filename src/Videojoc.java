@@ -20,7 +20,7 @@ public class Videojoc {
         return usuarisQueHanConsultat;
     }
 
-    public Videojoc() {
+    public Videojoc(String nom) {
         this.nom = nom;
         usuarisQueHanConsultat = new HashSet<>();
         comentaris = new HashSet<>();

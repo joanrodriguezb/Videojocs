@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.Optional;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -27,7 +28,7 @@ class UsuariTest {
     @Test
     void afegirComentari() {
         Usuari usuariTest = new Usuari(NOM_USER_TEST);
-        Videojoc videojocTest = new Videojoc();
+        Videojoc videojocTest = new Videojoc(NOM_JOC_TEST);
         usuariTest.afegirComentari(videojocTest, TEXT_COMENTARI_TEST);
 
         Set<Comentari> comentaris = videojocTest.getComentaris();

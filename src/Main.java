@@ -22,7 +22,7 @@ public class Main {
         presentacio.mostrarMenuCreacioVideojoc();
         String nomVideojocCreat = presentacio.demanarText();
         while (!nomVideojocCreat.isBlank()) {
-            Videojoc videojocCreat = new Videojoc();
+            Videojoc videojocCreat = new Videojoc(nomVideojocCreat);
             biblioteca.afegir(videojocCreat);
             presentacio.mostrarOK();
             presentacio.mostrarMenuCreacioVideojoc();
@@ -70,7 +70,7 @@ public class Main {
     }
 
     private static void crearVideojocsDeMostra() {
-        Videojoc returnToMonkeyIsland = new Videojoc();
+        Videojoc returnToMonkeyIsland = new Videojoc("Return to Monkey Island");
         returnToMonkeyIsland.setGenere("Aventura gràfica");
         returnToMonkeyIsland.setNumeroJugadors(15539);
         returnToMonkeyIsland.setPreu(22.99f);
@@ -102,7 +102,7 @@ public class Main {
                 SO: Big Sur""");
         biblioteca.afegir(returnToMonkeyIsland);
 
-        Videojoc videojocDeProva = new Videojoc();
+        Videojoc videojocDeProva = new Videojoc("Nom de prova");
         videojocDeProva.setGenere("Gènere de prova");
         videojocDeProva.setNumeroJugadors(99);
         videojocDeProva.setPreu(99f);
