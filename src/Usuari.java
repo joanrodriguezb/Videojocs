@@ -46,6 +46,7 @@ public class Usuari {
 
     public Set<Valoracio> getValoracions() {
         return valoracions;
+    }
 
     public void puntuar(Videojoc videojoc, double puntuacioNota) {
         Nota nota = new Nota(puntuacioNota, this, videojoc);
