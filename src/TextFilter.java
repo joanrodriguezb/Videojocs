@@ -1,4 +1,5 @@
 public class TextFilter {
+    public static final String REPLACEMENT = "*";
     String[] paraulesProhibides;
 
 
@@ -15,6 +16,10 @@ public class TextFilter {
     }
 
     public String filter(String text){
-        return "";
+        for (String paraulaProhibida : paraulesProhibides) {
+            // TODO millorar eficiència d'aquest mètode.
+            text = text.replaceAll(paraulaProhibida, REPLACEMENT);
+        }
+        return text;
     }
 }
