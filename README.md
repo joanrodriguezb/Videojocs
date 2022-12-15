@@ -17,6 +17,7 @@ Tecnologies
 
 Diagrames
 ---------
-
-![image 1](./diagrams/DiagramaClasse.png) 
-![image 1](./diagrams/DiagramaSecuencia.png)
+![Diagrama de classes DLC](./docs/Diagrama Classes DLCVideojoc.pdf)
+![Diagrama de classes Paraulotes](./docs/DiagramaClasseParaulotes.png) 
+![Diagrama de seqüència Paraulotes](./docs/DiagramaSecuenciaParaulotes.png)
+![Diagrama de classes i de seqüència de Notes](./docs/Diagrames-Notes.jpg)
