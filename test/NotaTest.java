@@ -1,7 +1,3 @@
-package Test;
-
-import src.Nota;
-
 class NotaTest {
 
     public static final int NOTA = 8;

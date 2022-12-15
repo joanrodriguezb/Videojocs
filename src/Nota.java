@@ -1,5 +1,3 @@
-package src;
-
 public class Nota {
 
     double nota;
@@ -17,4 +15,3 @@ public class Nota {
     }
 
 }
-

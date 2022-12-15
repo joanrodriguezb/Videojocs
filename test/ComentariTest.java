@@ -1,8 +1,4 @@
-package Test;
-
 import org.junit.jupiter.api.Test;
-import src.Comentari;
-import src.Usuari;
 
 import java.time.LocalDate;
 
@@ -30,8 +26,8 @@ class ComentariTest {
         LocalDate despres = LocalDate.now();
         assert(
                 comentariTest.getData().equals(abans)
-                        ||
-                        comentariTest.getData().equals(despres)
+                ||
+                comentariTest.getData().equals(despres)
         );
     }
 }
